@@ -8,6 +8,8 @@ var React = require('react-native');
 var MessageActions = require('./src/actions/MessageActions');
 var MessageStore = require('./src/stores/MessageStore');
 
+var MessageContainer = require('./src/components/MessageContainer')
+
 var {
   AppRegistry,
   StyleSheet,
@@ -23,8 +25,8 @@ class RNAltExample extends React.Component {
   }
 
   componentDidMount() {
-    MessageActions.fetchMessages();
     MessageStore.listen(this.onChange.bind(this));
+    MessageActions.fetchMessages();
   }
 
   componentWillUnmount() {
@@ -48,9 +50,7 @@ class RNAltExample extends React.Component {
         {
           this.state.messages.map(function(message){
             return (
-              <Text style={styles.instructions}>
-                {message}
-              </Text>
+              <MessageContainer message={message} />
             )
           })
         }

@@ -7,9 +7,15 @@ class MessageActions {
   }
 
   fetchMessages(){
-    console.log('FETCH')
-    var messages = ['hello', 'how', 'are', 'you'];
-    this.actions.updateMessages(messages);
+    var MOCK = [
+      {body: 'hello', timestamp: '1 min ago', location: 'San Francisco'},
+      {body: 'goodbye', timestamp: '1 min ago', location: 'San Francisco'},
+      {body: 'where does the wind blow', timestamp: '1 min ago', location: 'San Francisco'},
+      {body: 'duuuuude', timestamp: '1 min ago', location: 'San Francisco'},
+      {body: 'whaaaat', timestamp: '1 min ago', location: 'San Francisco'}
+    ];
+
+    this.actions.updateMessages(MOCK);
   }
 
   messagesFailed(errorMessage) {

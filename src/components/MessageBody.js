@@ -4,13 +4,13 @@ var { View, Text } = React;
 
 class MessageBody extends React.Component {
 
-	render(){
-		return (
-			<View>
-				<Text>{this.props}</Text>
-			</View>
-		);
-	}
+  render(){
+    return (
+      <View>
+        <Text>{this.props}</Text>
+      </View>
+    );
+  }
 }
 
 module.exports = MessageBody;

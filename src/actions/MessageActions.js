@@ -1,11 +1,9 @@
+'use strict'
+
 var alt = require('../alt');
 var MessagesFetcher = require('../utils/MessagesFetcher');
 
 class MessageActions {
-
-  updateLocation(location){
-    this.dispatch(location)
-  }
 
   updateMessages(messages){
     this.dispatch(messages);
@@ -14,9 +12,9 @@ class MessageActions {
   fetchMessages(location){
     MessagesFetcher.fetch(location)
       .then((messages)=>{
-        console.log(messages)
-        this.actions.updateMessages(messages);
-      })
+        this.actions.updateMessages(messages);})
+      .catch((e)=>{console.log(e, "88888errr")})
+
   }
 
   messagesFailed(errorMessage) {

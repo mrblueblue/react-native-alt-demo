@@ -12,17 +12,15 @@ class LocationTextInput extends React.Component {
   }
 
   render(){
-    return(
-      <View>
-        <TextInput
-          style={{height: 40, width: 100, borderColor: 'gray', borderWidth: 1}}
-          editable={true}
-          onChangeText={(text) => this.setState({input: text})}
-          onSubmitEditing={this.handleSubmit.bind(this)}
-          placeholder={'enter a location'}
-          value={this.state.input}
-        />
-      </View>
+    return(      
+      <TextInput
+        style={{textAlign: 'center', height: 50, margin: 30, marginTop: 60, padding: 10, backgroundColor: 'white', fontFamily: 'Avenir', fontSize: 20, borderRadius: 10}}
+        editable={true}
+        onChangeText={(text) => this.setState({input: text})}
+        onSubmitEditing={this.handleSubmit.bind(this)}
+        placeholder={'please enter a location...'}
+        value={this.state.input}
+      />
     );
   }
 
@@ -30,7 +28,7 @@ class LocationTextInput extends React.Component {
     var location = this.state.input;
     MessageActions.fetchMessages(location);
     this.setState({input:''})
-
+    this.props.toggle()
   }
 }
 

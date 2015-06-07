@@ -1,21 +1,15 @@
 # react-native-alt-demo
 
-This application demos Alt/Flux integration with React-Native.
+*Type in a location and see a stream of the most recent tweets for that location.*
 
-Quickly bootstrap your React-Native development by using this application as a boilerplate example.
+This application demos [Alt/Flux](https://github.com/goatslacker/alt) integration with [React-Native](https://github.com/facebook/react-native).You can quickly bootstrap your React-Native development by using the application as a boilerplate example.
 
 Build upon this as you wish!
 
 (...a work-in-progress...)
 
-### Overview
-
-Type in a location and see a stream of the most recent tweets for that location.
-
-The application demonstrates
-* Flux pattern in React-Native
-* Custom navigation
+The application demonstrates:
+* The Flux pattern in React-Native
+* [Custom navigation bar](https://github.com/Kureev/react-native-navbar)
 * Modular UI components
-* ListView component
-* TextInput component
-* Testing + Gulp
+* The ListView and TextInput components

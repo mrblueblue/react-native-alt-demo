@@ -6,12 +6,10 @@ var MessageActions = require('../actions/MessageActions');
 class MessageStore {
 
   constructor() {
-    this.location = null;
-    this.messages = ['hello', 'how', 'are', 'you'];
+    this.messages = [];
     this.errorMessage = null;
 
     this.bindListeners({
-      handleUpdateLocation: MessageActions.UPDATE_LOCATION,
       handleUpdateMessages: MessageActions.UPDATE_MESSAGES,
       handleFetchMessages: MessageActions.FETCH_MESSAGES,
       handleMessagesFailed: MessageActions.MESSAGES_FAILED

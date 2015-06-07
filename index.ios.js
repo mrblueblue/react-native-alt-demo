@@ -5,16 +5,23 @@
 'use strict';
 
 var React = require('react-native');
+var NavigationBar = require('react-native-navbar');
+
 var MessageActions = require('./src/actions/MessageActions');
 var MessageStore = require('./src/stores/MessageStore');
 
+var MessagesFetcher = require('./src/utils/MessagesFetcher');
 var MessageContainer = require('./src/components/MessageContainer')
+var LocationTextInput = require('./src/components/LocationTextInput');
 
 var {
   AppRegistry,
+  Navigator,
   StyleSheet,
   Text,
   View,
+  ListView,
+
 } = React;
 
 class RNAltExample extends React.Component {
@@ -22,11 +29,12 @@ class RNAltExample extends React.Component {
   constructor(){
     super()
     this.state = MessageStore.getState();
+    this.state.dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
   }
 
   componentDidMount() {
     MessageStore.listen(this.onChange.bind(this));
-    MessageActions.fetchMessages();
+    MessageActions.fetchMessages('san francisco')
   }
 
   componentWillUnmount() {
@@ -34,37 +42,36 @@ class RNAltExample extends React.Component {
   }
 
   onChange(state) {
-    this.setState(state);
+    this.setState({dataSource: this.state.dataSource.cloneWithRows(state.messages)});
   }
 
   render() {
-
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native + Alt!
-        </Text>
-        <Text style={styles.instructions}>
-          Here are the list of messages
-        </Text>
-        {
-          this.state.messages.map(function(message){
-            return (
-              <MessageContainer message={message} />
-            )
-          })
-        }
-       
-      </View>
+        <View style={{flexDirection: 'column'}}>
+          <LocationTextInput style={{width: 100, height: 40}}/>
+          <ListView
+            initialListSize={10}
+            pageSize={4}
+            scrollRenderAheadDistance={2000} 
+            dataSource={this.state.dataSource}
+            renderRow={this.renderRow}
+            removeClippedSubviews={true}
+            scrollEnabled={true}
+            style={{backgroundColor: 'white', height: require('Dimensions').get('window').height}}
+          />
+        </View>
     );
   
+  }
+
+  renderRow(message){
+    return(<MessageContainer message={message}/>);
   }
 }
 
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
@@ -77,7 +84,7 @@ var styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
-  },
+  }
 });
 
 AppRegistry.registerComponent('RNAltExample', () => RNAltExample);

@@ -4,13 +4,13 @@ var { View, Text } = React;
 
 class MessageFooter extends React.Component {
 
-	render(){
-		return (
-			<View>
-				<Text>{this.props.timestamp} @ {this.props.location}</Text>
-			</View>
-		);
-	}
+  render(){
+    return (
+      <View>
+        <Text>{this.props.timestamp}</Text>
+      </View>
+    );
+  }
 }
 
 module.exports = MessageFooter;

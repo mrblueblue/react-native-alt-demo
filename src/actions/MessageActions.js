@@ -1,21 +1,22 @@
 var alt = require('../alt');
+var MessagesFetcher = require('../utils/MessagesFetcher');
 
 class MessageActions {
+
+  updateLocation(location){
+    this.dispatch(location)
+  }
 
   updateMessages(messages){
     this.dispatch(messages);
   }
 
-  fetchMessages(){
-    var MOCK = [
-      {body: 'hello', timestamp: '1 min ago', location: 'San Francisco'},
-      {body: 'goodbye', timestamp: '1 min ago', location: 'San Francisco'},
-      {body: 'where does the wind blow', timestamp: '1 min ago', location: 'San Francisco'},
-      {body: 'duuuuude', timestamp: '1 min ago', location: 'San Francisco'},
-      {body: 'whaaaat', timestamp: '1 min ago', location: 'San Francisco'}
-    ];
-
-    this.actions.updateMessages(MOCK);
+  fetchMessages(location){
+    MessagesFetcher.fetch(location)
+      .then((messages)=>{
+        console.log(messages)
+        this.actions.updateMessages(messages);
+      })
   }
 
   messagesFailed(errorMessage) {

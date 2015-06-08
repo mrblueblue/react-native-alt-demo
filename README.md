@@ -13,3 +13,9 @@ The application demonstrates:
 * Modular UI components
 * Unit testing with Jest (work in progress)
 * Gulp integration (work in progress)
+
+<hr>
+<div>
+  <img src='https://github.com/mrblueblue/react-native-alt-demo/blob/master/screenshot-1.png' height=700 />
+  <img src='https://github.com/mrblueblue/react-native-alt-demo/blob/master/screenshot-2.png'height=700 />
+</div>

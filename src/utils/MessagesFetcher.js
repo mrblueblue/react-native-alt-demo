@@ -1,6 +1,6 @@
 module.exports = MessagesFetcher = {
   fetch: function(location){
-    return fetch(`http://localhost:3000/api/tweets?location=${location}`)
+    return fetch(`https://iojs-twitter.herokuapp.com/api/tweets?location=${location}`)
       .then((response)=>{
         return response.json()})
       .then((json)=>{

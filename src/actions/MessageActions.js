@@ -5,11 +5,11 @@ var MessagesFetcher = require('../utils/MessagesFetcher');
 
 class MessageActions {
 
-  updateMessages(messages){
+  updateMessages(messages) {
     this.dispatch(messages);
   }
 
-  fetchMessages(location){
+  fetchMessages(location) {
     MessagesFetcher.fetch(location)
       .then((messages)=>{
         this.actions.updateMessages(messages);})

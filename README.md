@@ -6,10 +6,10 @@ This application demos [Alt/Flux](https://github.com/goatslacker/alt) integratio
 
 Build upon this as you wish!
 
-(...a work-in-progress...)
-
 The application demonstrates:
 * The Flux pattern in React-Native
-* [Custom navigation bar](https://github.com/Kureev/react-native-navbar)
+* Use of a [custom navigation bar](https://github.com/Kureev/react-native-navbar)
+* Code base organization for React-Native development
 * Modular UI components
-* The ListView and TextInput components
+* Unit testing with Jest (work in progress)
+* Gulp integration (work in progress)

@@ -10,7 +10,7 @@ class MessageContainer extends React.Component {
     var { body, ...props } = this.props.message;
 
     return(
-      <View>
+      <View style={{padding: 10}}>
         <MessageBody body={body}/>
         <MessageFooter {...props}/>
       </View>

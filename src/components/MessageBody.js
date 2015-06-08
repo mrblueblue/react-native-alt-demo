@@ -7,7 +7,7 @@ class MessageBody extends React.Component {
   render(){
     return (
       <View>
-        <Text>{this.props}</Text>
+        <Text style={{fontFamily: 'Avenir'}}>{this.props}</Text>
       </View>
     );
   }

@@ -10,11 +10,14 @@ class MessageActions {
   }
 
   fetchMessages(location) {
+    this.dispatch();
     MessagesFetcher.fetch(location)
       .then((messages)=>{
         this.actions.updateMessages(messages);})
-      .catch((e)=>{console.log(e, "88888errr")})
-
+      .catch((e)=>{
+        console.log("Response Error", e);
+        this.actions.messagesFailed(e);
+      })
   }
 
   messagesFailed(errorMessage) {

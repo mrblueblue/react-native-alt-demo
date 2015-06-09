@@ -5,14 +5,14 @@ var App = require('./app');
 var NavigationBar = require('react-native-navbar');
 var SearchButton = require('./components/SearchButton');
 
-var { Navigator, View } = React;
+var { Navigator, View, StyleSheet } = React;
 
 class Navigation extends React.Component {
 
   render() {
     return (
       <Navigator
-        style={{flex: 1}}
+        style={styles.navigator}
         renderScene={this.renderScene.bind(this)}
         initialRoute={{
           component: App,
@@ -32,7 +32,7 @@ class Navigation extends React.Component {
 
     if (navBar) {
       navBar = React.addons.cloneWithProps(navBar, {
-        style: {'backgroundColor': '#00bcd4'},
+        style: styles.navColor,
         titleColor: 'white',
         navigator: navigator,
         route: route
@@ -40,7 +40,7 @@ class Navigation extends React.Component {
     }
 
     return (
-      <View style={{flex: 1, backgroundColor: '#f9f9f9'}}>
+      <View style={styles.appContainer}>
         {navBar}
         <Component 
           navigator={navigator} 
@@ -51,5 +51,18 @@ class Navigation extends React.Component {
     );
   }
 }
+
+var styles = StyleSheet.create({
+  navigator: {
+    flex: 1
+  },
+  navColor: {
+    'backgroundColor': '#00bcd4'
+  },
+  appContainer: {
+    flex: 1, 
+    backgroundColor: '#f9f9f9'
+  }
+});
 
 module.exports = Navigation;

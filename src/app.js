@@ -2,11 +2,12 @@
 
 var React = require('react-native');
 
+/* Alt/Flux */
 var MessageActions = require('./actions/MessageActions');
 var MessageStore = require('./stores/MessageStore');
 
-var MessagesFetcher = require('./utils/MessagesFetcher');
-var MessageContainer = require('./components/MessageContainer')
+/* Components */
+var MessageContainer = require('./components/MessageContainer');
 var LocationTextInput = require('./components/LocationTextInput');
 
 var {
@@ -30,7 +31,6 @@ class App extends React.Component {
 
   componentDidMount() {
     MessageStore.listen(this.onChange.bind(this));
-    MessageActions.fetchMessages('san francisco')
   }
 
   componentWillUnmount() {
@@ -39,35 +39,52 @@ class App extends React.Component {
 
   onChange(state) {
     this.setState({
-      dataSource: this.state.dataSource.cloneWithRows(state.messages)
+      dataSource: this.state.dataSource.cloneWithRows(state.messages),
+      messages: state.messages
     });
   }
 
   render() {
-  
+
+    // Edit State
     if (this.props.edit) {
       return (
-        <View style={{flex: 1, alignItems: 'center', borderRadius: 10}}>
+        <View style={styles.inputContainer}>
           <LocationTextInput toggle={this.props.toggle} />
         </View>
       );
+    }
 
-    } else {
+    // Error State
+    if (this.state.errorMessage) {
       return (
-        <View>
-          <ListView
-            initialListSize={10}
-            pageSize={4}
-            scrollRenderAheadDistance={2000} 
-            dataSource={this.state.dataSource}
-            renderRow={this.renderRow}
-            removeClippedSubviews={true}
-            scrollEnabled={true}
-            style={{backgroundColor: 'white', height: require('Dimensions').get('window').height-50}}
-          />
-        </View>
+        <Text>{this.state.errorMessage}</Text>
       );
     }
+
+    // Loading State
+    if (!this.state.messages.length) {
+      return (
+        <Text>loading</Text>
+      );
+    }
+
+    // Success State
+    return (
+      <View>
+        <ListView
+          initialListSize={10}
+          pageSize={4}
+          scrollRenderAheadDistance={2000} 
+          dataSource={this.state.dataSource}
+          renderRow={this.renderRow}
+          removeClippedSubviews={true}
+          scrollEnabled={true}
+          style={styles.messagesView}
+        />
+      </View>
+    );
+    
   }
 
   renderRow(message){
@@ -76,5 +93,17 @@ class App extends React.Component {
     );
   }
 }
+
+var styles = StyleSheet.create({
+  inputContainer: {
+    flex: 1, 
+    alignItems: 'center', 
+    borderRadius: 10
+  },
+  messagesView: {
+    backgroundColor: 'white', 
+    height: require('Dimensions').get('window').height-50
+  }
+});
 
 module.exports = App;

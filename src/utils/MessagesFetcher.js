@@ -1,3 +1,11 @@
+/*
+
+MessagesFetcher has a method 'fetch', 
+which returns the Fetch API method,
+which is a promise
+
+*/
+
 module.exports = MessagesFetcher = {
   fetch: function(location){
     return fetch(`https://iojs-twitter.herokuapp.com/api/tweets?location=${location}`)

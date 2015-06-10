@@ -16,6 +16,7 @@ var {
   Text,
   View,
   ListView,
+  ActivityIndicatorIOS,
 
 } = React;
 
@@ -58,14 +59,22 @@ class App extends React.Component {
     // Error State
     if (this.state.errorMessage) {
       return (
-        <Text>{this.state.errorMessage}</Text>
+      <View style={styles.inputContainer}>
+        <Text style={[styles.errorText, {marginTop: 60}]}>
+          {this.state.errorMessage}
+        </Text>
+      </View>
       );
     }
 
     // Loading State
     if (!this.state.messages.length) {
       return (
-        <Text>loading</Text>
+        <ActivityIndicatorIOS
+          animating={true}
+          style={[styles.centering, styles.loading]}
+          size="large"
+        />
       );
     }
 
@@ -103,6 +112,18 @@ var styles = StyleSheet.create({
   messagesView: {
     backgroundColor: 'white', 
     height: require('Dimensions').get('window').height-50
+  },
+  errorText: {
+    fontFamily: 'Avenir',
+    fontSize: 20
+  },
+  centering: {
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  loading: {
+    height: 100, 
+    marginTop: 60
   }
 });
 

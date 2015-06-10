@@ -23,11 +23,9 @@ class MessageStore {
   handleUpdateMessages(messages) {
     this.messages = messages;
     this.errorMessage = null;
-    console.log(this.messages.length)
   }
 
   handleFetchMessages() {
-    console.log(this.messages.length)
     this.messages = [];
   }
 

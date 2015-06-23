@@ -1,10 +1,10 @@
 'use strict'
 
-var React = require('react-native');
+import React from 'react-native';
 
-var { Image, TouchableOpacity } = React;
+let { Image, TouchableOpacity } = React;
 
-class SearchButton extends React.Component {
+export class SearchButton extends React.Component {
   render(){
     return (
       <TouchableOpacity
@@ -16,5 +16,3 @@ class SearchButton extends React.Component {
     );
   }
 }
-
-module.exports = SearchButton;

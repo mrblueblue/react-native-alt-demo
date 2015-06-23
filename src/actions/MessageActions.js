@@ -1,9 +1,9 @@
 'use strict'
 
-var alt = require('../alt');
-var MessagesFetcher = require('../utils/MessagesFetcher');
+import { alt } from '../alt';
+import { MessagesFetcher } from '../utils/MessagesFetcher';
 
-class MessageActions {
+export class MessageActions {
 
   updateMessages(messages) {
     this.dispatch(messages);
@@ -25,4 +25,4 @@ class MessageActions {
   }
 }
 
-module.exports = alt.createActions(MessageActions);
+export default alt.createActions(MessageActions);

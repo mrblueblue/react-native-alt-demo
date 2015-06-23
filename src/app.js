@@ -1,16 +1,16 @@
 'use strict'
 
-var React = require('react-native');
+import React from 'react-native';
 
 /* Alt/Flux */
-var MessageActions = require('./actions/MessageActions');
-var MessageStore = require('./stores/MessageStore');
+import MessageActions from './actions/MessageActions';
+import MessageStore from './stores/MessageStore';
 
 /* Components */
-var MessageContainer = require('./components/MessageContainer');
-var LocationTextInput = require('./components/LocationTextInput');
+import { MessageContainer } from './components/MessageContainer';
+import { LocationTextInput } from './components/LocationTextInput';
 
-var {
+let {
   
   StyleSheet,
   Text,
@@ -20,7 +20,7 @@ var {
 
 } = React;
 
-class App extends React.Component {
+export class App extends React.Component {
 
   constructor(){
     super();
@@ -126,5 +126,3 @@ var styles = StyleSheet.create({
     marginTop: 60
   }
 });
-
-module.exports = App;

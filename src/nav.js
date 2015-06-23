@@ -1,13 +1,13 @@
 'use strict';
 
-var React = require('react-native');
-var App = require('./app');
-var NavigationBar = require('react-native-navbar');
-var SearchButton = require('./components/SearchButton');
+import React from 'react-native';
+import { App }  from './app';
+import NavigationBar from 'react-native-navbar';
+import { SearchButton } from './components/SearchButton';
 
-var { Navigator, View, StyleSheet } = React;
+let { Navigator, View, StyleSheet } = React;
 
-class Navigation extends React.Component {
+export class Navigation extends React.Component {
 
   render() {
     return (
@@ -52,7 +52,7 @@ class Navigation extends React.Component {
   }
 }
 
-var styles = StyleSheet.create({
+let styles = StyleSheet.create({
   navigator: {
     flex: 1
   },
@@ -65,4 +65,3 @@ var styles = StyleSheet.create({
   }
 });
 
-module.exports = Navigation;

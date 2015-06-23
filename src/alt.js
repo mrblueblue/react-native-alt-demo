@@ -1,4 +1,4 @@
 'use strict'
 
-var Alt = require('alt');
-module.exports = new Alt();
+import Alt from 'alt';
+export const alt = new Alt();

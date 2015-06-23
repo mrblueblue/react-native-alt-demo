@@ -6,7 +6,7 @@ which is a promise
 
 */
 
-module.exports = MessagesFetcher = {
+export const MessagesFetcher = {
   fetch: function(location){
     return fetch(`https://iojs-twitter.herokuapp.com/api/tweets?location=${location}`)
       .then((response)=>{

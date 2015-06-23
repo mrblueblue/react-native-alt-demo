@@ -1,12 +1,12 @@
 'use strict'
 
-var React = require('react-native');
+import React from 'react-native';
 
-var MessageActions = require('../actions/MessageActions');
+import MessageActions from '../actions/MessageActions';
 
-var { TextInput, View , StyleSheet } = React;
+let { TextInput, View , StyleSheet } = React;
 
-class LocationTextInput extends React.Component {
+export class LocationTextInput extends React.Component {
 
   constructor(){
     super();
@@ -47,5 +47,3 @@ var styles = StyleSheet.create({
     borderRadius: 10
   }
 });
-
-module.exports = LocationTextInput;

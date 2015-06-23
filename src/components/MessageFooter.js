@@ -1,10 +1,10 @@
 'use strict'
 
-var React = require('react-native');
+import React from 'react-native';
 
-var { View, Text, StyleSheet } = React;
+let { View, Text, StyleSheet } = React;
 
-class MessageFooter extends React.Component {
+export class MessageFooter extends React.Component {
 
   render(){
     return (
@@ -18,7 +18,7 @@ class MessageFooter extends React.Component {
   }
 }
 
-var styles = StyleSheet.create({
+let styles = StyleSheet.create({
   footerContainer: {
     marginTop: 2
   },
@@ -31,4 +31,3 @@ var styles = StyleSheet.create({
   }
 });
 
-module.exports = MessageFooter;

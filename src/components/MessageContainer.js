@@ -1,15 +1,15 @@
 'use strict'
 
-var React = require('react-native');
-var MessageBody = require('./MessageBody');
-var MessageFooter = require('./MessageFooter');
+import React from 'react-native';
+import { MessageBody } from './MessageBody';
+import { MessageFooter } from './MessageFooter';
 
-var { View } = React;
+let { View } = React;
 
-class MessageContainer extends React.Component {
+export class MessageContainer extends React.Component {
 
   render(){
-    var { body, ...props } = this.props.message;
+    let { body, ...props } = this.props.message;
     return(
       <View style={{padding: 10}}>
         <MessageBody body={body}/>
@@ -18,5 +18,3 @@ class MessageContainer extends React.Component {
     );
   }
 }
-
-module.exports = MessageContainer;

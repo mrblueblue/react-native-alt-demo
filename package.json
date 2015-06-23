@@ -15,7 +15,7 @@
     ],
     "unmockedModulePathPatterns": [
       "source-map",
-      "node_modules",
+      "react",
       "alt",
       "stores",
       "actions",

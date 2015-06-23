@@ -1,9 +1,8 @@
-'use strict'
+'use strict';
 
 import React from 'react-native';
 
 /* Alt/Flux */
-import MessageActions from './actions/MessageActions';
 import MessageStore from './stores/MessageStore';
 
 /* Components */
@@ -11,7 +10,7 @@ import { MessageContainer } from './components/MessageContainer';
 import { LocationTextInput } from './components/LocationTextInput';
 
 let {
-  
+
   StyleSheet,
   Text,
   View,
@@ -84,7 +83,7 @@ export class App extends React.Component {
         <ListView
           initialListSize={10}
           pageSize={4}
-          scrollRenderAheadDistance={2000} 
+          scrollRenderAheadDistance={2000}
           dataSource={this.state.dataSource}
           renderRow={this.renderRow}
           removeClippedSubviews={true}
@@ -93,25 +92,25 @@ export class App extends React.Component {
         />
       </View>
     );
-    
+
   }
 
   renderRow(message){
-    return ( 
-      <MessageContainer message={message} /> 
+    return (
+      <MessageContainer message={message} />
     );
   }
 }
 
 var styles = StyleSheet.create({
   inputContainer: {
-    flex: 1, 
-    alignItems: 'center', 
+    flex: 1,
+    alignItems: 'center',
     borderRadius: 10
   },
   messagesView: {
-    backgroundColor: 'white', 
-    height: require('Dimensions').get('window').height-50
+    backgroundColor: 'white',
+    height: require('Dimensions').get('window').height - 50
   },
   errorText: {
     fontFamily: 'Avenir',
@@ -122,7 +121,7 @@ var styles = StyleSheet.create({
     justifyContent: 'center'
   },
   loading: {
-    height: 100, 
+    height: 100,
     marginTop: 60
   }
 });

@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import React from 'react-native';
 
@@ -10,7 +10,7 @@ export class MessageFooter extends React.Component {
     return (
       <View style={styles.footerContainer}>
         <Text style={styles.footerText}>
-          <Text style={styles.username}>{this.props.user} </Text> 
+          <Text style={styles.username}>{this.props.user} </Text>
           - {this.props.timestamp} with {this.props.retweets} retweets
         </Text>
       </View>
@@ -23,7 +23,7 @@ let styles = StyleSheet.create({
     marginTop: 2
   },
   footerText: {
-    fontFamily: 'Avenir', 
+    fontFamily: 'Avenir',
     fontSize: 10
   },
   username: {

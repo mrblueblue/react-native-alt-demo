@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react-native';
-import { App }  from './app';
+import { App } from './app';
 import NavigationBar from 'react-native-navbar';
 import { SearchButton } from './components/SearchButton';
 
@@ -16,9 +16,9 @@ export class Navigation extends React.Component {
         renderScene={this.renderScene.bind(this)}
         initialRoute={{
           component: App,
-          navigationBar: 
-            <NavigationBar 
-              title="React-Native-Alt-Demo" 
+          navigationBar:
+            <NavigationBar
+              title='React-Native-Alt-Demo'
               customNext={ <SearchButton handlePress={this.props.toggle}/> }
             />
         }}
@@ -27,8 +27,8 @@ export class Navigation extends React.Component {
   }
 
   renderScene(route, navigator) {
-    var Component = route.component;
-    var navBar = route.navigationBar;
+    let Component = route.component;
+    let navBar = route.navigationBar;
 
     if (navBar) {
       navBar = React.addons.cloneWithProps(navBar, {
@@ -42,9 +42,9 @@ export class Navigation extends React.Component {
     return (
       <View style={styles.appContainer}>
         {navBar}
-        <Component 
-          navigator={navigator} 
-          route={route} 
+        <Component
+          navigator={navigator}
+          route={route}
           edit={this.props.edit}
           toggle={this.props.toggle} />
       </View>
@@ -60,7 +60,7 @@ let styles = StyleSheet.create({
     'backgroundColor': '#00bcd4'
   },
   appContainer: {
-    flex: 1, 
+    flex: 1,
     backgroundColor: '#f9f9f9'
   }
 });

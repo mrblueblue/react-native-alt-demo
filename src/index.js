@@ -3,7 +3,7 @@
 import React from 'react-native';
 import { Navigation } from './nav';
 
-let { AppRegistry, Navigator, StatusBarIOS } = React;
+let { AppRegistry, StatusBarIOS } = React;
 
 class RNAltExample extends React.Component {
 
@@ -18,7 +18,7 @@ class RNAltExample extends React.Component {
 
   render() {
     return (
-      <Navigation 
+      <Navigation
         edit={this.state.edit}
         toggle={this.toggleEdit.bind(this)} />
     );

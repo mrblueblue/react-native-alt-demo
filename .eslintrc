@@ -1,4 +1,7 @@
 {
+  "globals": {
+    "fetch": true
+  },
   "env": {
     "node": true,
     "es6": true
@@ -11,6 +14,7 @@
     "react"
   ],
   "rules": {
-    "quotes": [2, "single", "avoid-escape"]
+    "quotes": [2, "single", "avoid-escape"],
+    "no-use-before-define": 0
   }
 }

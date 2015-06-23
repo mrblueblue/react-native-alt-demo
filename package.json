@@ -14,7 +14,12 @@
       "js"
     ],
     "unmockedModulePathPatterns": [
-      "source-map"
+      "source-map",
+      "node_modules",
+      "alt",
+      "stores",
+      "actions",
+      "utils"
     ]
   },
   "dependencies": {

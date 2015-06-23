@@ -1,4 +1,4 @@
 'use strict';
 
 import Alt from 'alt';
-export const alt = new Alt();
+export default new Alt();

@@ -1,6 +1,6 @@
 
 
-import { alt } from '../alt';
+import alt from '../alt';
 import MessageActions from '../actions/MessageActions';
 
 export class MessageStore {
@@ -14,10 +14,6 @@ export class MessageStore {
       handleFetchMessages: MessageActions.FETCH_MESSAGES,
       handleMessagesFailed: MessageActions.MESSAGES_FAILED
     });
-  }
-
-  handleUpdateLocation(location) {
-    this.location = location;
   }
 
   handleUpdateMessages(messages) {

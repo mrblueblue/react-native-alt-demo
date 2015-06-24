@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-var React = require('react-native');
+import React from 'react-native';
 
-var { View, Text } = React;
+let { View, Text } = React;
 
-class MessageBody extends React.Component {
+export class MessageBody extends React.Component {
 
   render(){
     return (
@@ -14,5 +14,3 @@ class MessageBody extends React.Component {
     );
   }
 }
-
-module.exports = MessageBody;

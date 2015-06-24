@@ -1,9 +1,9 @@
 
 
-var alt = require('../alt');
-var MessageActions = require('../actions/MessageActions');
+import alt from '../alt';
+import MessageActions from '../actions/MessageActions';
 
-class MessageStore {
+export class MessageStore {
 
   constructor() {
     this.messages = [];
@@ -14,10 +14,6 @@ class MessageStore {
       handleFetchMessages: MessageActions.FETCH_MESSAGES,
       handleMessagesFailed: MessageActions.MESSAGES_FAILED
     });
-  }
-
-  handleUpdateLocation(location) {
-    this.location = location;
   }
 
   handleUpdateMessages(messages) {
@@ -34,4 +30,4 @@ class MessageStore {
   }
 }
 
-module.exports = alt.createStore(MessageStore, 'MessageStore');
+export default alt.createStore(MessageStore, 'MessageStore');

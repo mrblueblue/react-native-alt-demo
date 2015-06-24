@@ -1,12 +1,12 @@
-'use strict'
+'use strict';
 
-var React = require('react-native');
+import React from 'react-native';
 
-var MessageActions = require('../actions/MessageActions');
+import MessageActions from '../actions/MessageActions';
 
-var { TextInput, View , StyleSheet } = React;
+let { TextInput, StyleSheet } = React;
 
-class LocationTextInput extends React.Component {
+export class LocationTextInput extends React.Component {
 
   constructor(){
     super();
@@ -14,7 +14,7 @@ class LocationTextInput extends React.Component {
   }
 
   render(){
-    return(      
+    return (
       <TextInput
         style={styles.locationInput}
         editable={true}
@@ -27,25 +27,23 @@ class LocationTextInput extends React.Component {
   }
 
   handleSubmit(){
-    var location = this.state.input;
+    let location = this.state.input;
     MessageActions.fetchMessages(location);
-    this.setState({input:''})
+    this.setState({input: ''});
     this.props.toggle();
   }
 }
 
-var styles = StyleSheet.create({
+let styles = StyleSheet.create({
   locationInput: {
-    textAlign: 'center', 
-    height: 50, 
-    margin: 30, 
-    marginTop: 60, 
-    padding: 10, 
-    backgroundColor: 'white', 
-    fontFamily: 'Avenir', 
-    fontSize: 20, 
+    textAlign: 'center',
+    height: 50,
+    margin: 30,
+    marginTop: 60,
+    padding: 10,
+    backgroundColor: 'white',
+    fontFamily: 'Avenir',
+    fontSize: 20,
     borderRadius: 10
   }
 });
-
-module.exports = LocationTextInput;

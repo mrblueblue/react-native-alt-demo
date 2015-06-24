@@ -1,13 +1,13 @@
 'use strict';
 
-var React = require('react-native');
-var App = require('./app');
-var NavigationBar = require('react-native-navbar');
-var SearchButton = require('./components/SearchButton');
+import React from 'react-native';
+import { App } from './app';
+import NavigationBar from 'react-native-navbar';
+import { SearchButton } from './components/SearchButton';
 
-var { Navigator, View, StyleSheet } = React;
+let { Navigator, View, StyleSheet } = React;
 
-class Navigation extends React.Component {
+export class Navigation extends React.Component {
 
   render() {
     return (
@@ -16,9 +16,9 @@ class Navigation extends React.Component {
         renderScene={this.renderScene.bind(this)}
         initialRoute={{
           component: App,
-          navigationBar: 
-            <NavigationBar 
-              title="React-Native-Alt-Demo" 
+          navigationBar:
+            <NavigationBar
+              title='React-Native-Alt-Demo'
               customNext={ <SearchButton handlePress={this.props.toggle}/> }
             />
         }}
@@ -27,8 +27,8 @@ class Navigation extends React.Component {
   }
 
   renderScene(route, navigator) {
-    var Component = route.component;
-    var navBar = route.navigationBar;
+    let Component = route.component;
+    let navBar = route.navigationBar;
 
     if (navBar) {
       navBar = React.addons.cloneWithProps(navBar, {
@@ -42,9 +42,9 @@ class Navigation extends React.Component {
     return (
       <View style={styles.appContainer}>
         {navBar}
-        <Component 
-          navigator={navigator} 
-          route={route} 
+        <Component
+          navigator={navigator}
+          route={route}
           edit={this.props.edit}
           toggle={this.props.toggle} />
       </View>
@@ -52,7 +52,7 @@ class Navigation extends React.Component {
   }
 }
 
-var styles = StyleSheet.create({
+let styles = StyleSheet.create({
   navigator: {
     flex: 1
   },
@@ -60,9 +60,8 @@ var styles = StyleSheet.create({
     'backgroundColor': '#00bcd4'
   },
   appContainer: {
-    flex: 1, 
+    flex: 1,
     backgroundColor: '#f9f9f9'
   }
 });
 
-module.exports = Navigation;

@@ -1,18 +1,18 @@
 /*
 
-MessagesFetcher has a method 'fetch', 
+MessagesFetcher has a method 'fetch',
 which returns the Fetch API method,
 which is a promise
 
 */
 
-module.exports = MessagesFetcher = {
+export const MessagesFetcher = {
   fetch: function(location){
     return fetch(`https://iojs-twitter.herokuapp.com/api/tweets?location=${location}`)
-      .then((response)=>{
-        return response.json()})
-      .then((json)=>{
-        return json
-      })
+      .then( (response) => {
+        return response.json(); })
+      .then( (json) => {
+        return json;
+      });
   }
-}
+};

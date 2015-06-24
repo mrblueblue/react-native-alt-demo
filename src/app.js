@@ -1,17 +1,16 @@
-'use strict'
+'use strict';
 
-var React = require('react-native');
+import React from 'react-native';
 
 /* Alt/Flux */
-var MessageActions = require('./actions/MessageActions');
-var MessageStore = require('./stores/MessageStore');
+import MessageStore from './stores/MessageStore';
 
 /* Components */
-var MessageContainer = require('./components/MessageContainer');
-var LocationTextInput = require('./components/LocationTextInput');
+import { MessageContainer } from './components/MessageContainer';
+import { LocationTextInput } from './components/LocationTextInput';
 
-var {
-  
+let {
+
   StyleSheet,
   Text,
   View,
@@ -20,7 +19,7 @@ var {
 
 } = React;
 
-class App extends React.Component {
+export class App extends React.Component {
 
   constructor(){
     super();
@@ -84,7 +83,7 @@ class App extends React.Component {
         <ListView
           initialListSize={10}
           pageSize={4}
-          scrollRenderAheadDistance={2000} 
+          scrollRenderAheadDistance={2000}
           dataSource={this.state.dataSource}
           renderRow={this.renderRow}
           removeClippedSubviews={true}
@@ -93,25 +92,25 @@ class App extends React.Component {
         />
       </View>
     );
-    
+
   }
 
   renderRow(message){
-    return ( 
-      <MessageContainer message={message} /> 
+    return (
+      <MessageContainer message={message} />
     );
   }
 }
 
 var styles = StyleSheet.create({
   inputContainer: {
-    flex: 1, 
-    alignItems: 'center', 
+    flex: 1,
+    alignItems: 'center',
     borderRadius: 10
   },
   messagesView: {
-    backgroundColor: 'white', 
-    height: require('Dimensions').get('window').height-50
+    backgroundColor: 'white',
+    height: require('Dimensions').get('window').height - 50
   },
   errorText: {
     fontFamily: 'Avenir',
@@ -122,9 +121,7 @@ var styles = StyleSheet.create({
     justifyContent: 'center'
   },
   loading: {
-    height: 100, 
+    height: 100,
     marginTop: 60
   }
 });
-
-module.exports = App;

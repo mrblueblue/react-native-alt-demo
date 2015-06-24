@@ -1,23 +1,24 @@
 'use strict';
 
-var React = require('react-native');
-var Navigation =require('./src/nav');
+import React from 'react-native';
+import { Navigation } from './nav';
 
-var { AppRegistry, Navigator, StatusBarIOS } = React;
+let { AppRegistry, StatusBarIOS } = React;
 
 class RNAltExample extends React.Component {
 
   constructor(){
+    super();
     this.state = {edit: true};
   }
 
   componentWillMount(){
-    StatusBarIOS.setStyle(StatusBarIOS.Style.lightContent);
+    StatusBarIOS.setStyle('light-content');
   }
 
   render() {
     return (
-      <Navigation 
+      <Navigation
         edit={this.state.edit}
         toggle={this.toggleEdit.bind(this)} />
     );

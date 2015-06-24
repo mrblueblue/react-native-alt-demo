@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-var alt = require('../alt');
-var MessagesFetcher = require('../utils/MessagesFetcher');
+import alt from '../alt';
+import { MessagesFetcher } from '../utils/MessagesFetcher';
 
-class MessageActions {
+export class MessageActions {
 
   updateMessages(messages) {
     this.dispatch(messages);
@@ -13,11 +13,11 @@ class MessageActions {
     this.dispatch();
     MessagesFetcher.fetch(location)
       .then((messages)=>{
-        this.actions.updateMessages(messages);})
+        this.actions.updateMessages(messages); })
       .catch((e)=>{
-        console.log("Response Error", e);
+        console.log('Response Error', e);
         this.actions.messagesFailed(e);
-      })
+      });
   }
 
   messagesFailed(errorMessage) {
@@ -25,4 +25,4 @@ class MessageActions {
   }
 }
 
-module.exports = alt.createActions(MessageActions);
+export default alt.createActions(MessageActions);

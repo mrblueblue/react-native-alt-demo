@@ -1,16 +1,16 @@
-'use strict'
+'use strict';
 
-var React = require('react-native');
+import React from 'react-native';
 
-var { View, Text, StyleSheet } = React;
+let { View, Text, StyleSheet } = React;
 
-class MessageFooter extends React.Component {
+export class MessageFooter extends React.Component {
 
   render(){
     return (
       <View style={styles.footerContainer}>
         <Text style={styles.footerText}>
-          <Text style={styles.username}>{this.props.user} </Text> 
+          <Text style={styles.username}>{this.props.user} </Text>
           - {this.props.timestamp} with {this.props.retweets} retweets
         </Text>
       </View>
@@ -18,12 +18,12 @@ class MessageFooter extends React.Component {
   }
 }
 
-var styles = StyleSheet.create({
+let styles = StyleSheet.create({
   footerContainer: {
     marginTop: 2
   },
   footerText: {
-    fontFamily: 'Avenir', 
+    fontFamily: 'Avenir',
     fontSize: 10
   },
   username: {
@@ -31,4 +31,3 @@ var styles = StyleSheet.create({
   }
 });
 
-module.exports = MessageFooter;

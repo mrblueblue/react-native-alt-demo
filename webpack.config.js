@@ -20,7 +20,7 @@ var config = {
 
   module: {
     loaders: [
-      {test: /\.(js|jsx|es6)$/, loaders: ['babel?stage=0']},
+      {test: /\.(js|jsx|es6)$/, loaders: ['babel?stage=0&blacklist=validation.react']},
     ],
   },
   resolve: { extensions: ['', '.js', '.jsx', '.es6'] },

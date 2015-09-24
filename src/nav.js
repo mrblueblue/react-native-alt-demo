@@ -16,11 +16,7 @@ export class Navigation extends React.Component {
         renderScene={this.renderScene.bind(this)}
         initialRoute={{
           component: App,
-          navigationBar:
-            <NavigationBar
-              title='React-Native-Alt-Demo'
-              customNext={ <SearchButton handlePress={this.props.toggle}/> }
-            />
+          navigationBar: <NavigationBar title='React-Native-Alt-Demo'/>
         }}
       />
     );
@@ -45,8 +41,7 @@ export class Navigation extends React.Component {
         <Component
           navigator={navigator}
           route={route}
-          edit={this.props.edit}
-          toggle={this.props.toggle} />
+        />
       </View>
     );
   }

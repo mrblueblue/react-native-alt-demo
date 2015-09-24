@@ -46,40 +46,32 @@ export class App extends React.Component {
 
   render() {
 
-    // Edit State
-    if (this.props.edit) {
-      return (
-        <View style={styles.inputContainer}>
-          <LocationTextInput toggle={this.props.toggle} />
-        </View>
-      );
-    }
+    // // Error State
+    // if (this.state.errorMessage) {
+    //   return (
+    //   <View style={styles.inputContainer}>
+    //     <Text style={[styles.errorText, {marginTop: 60}]}>
+    //       {this.state.errorMessage}
+    //     </Text>
+    //   </View>
+    //   );
+    // }
 
-    // Error State
-    if (this.state.errorMessage) {
-      return (
-      <View style={styles.inputContainer}>
-        <Text style={[styles.errorText, {marginTop: 60}]}>
-          {this.state.errorMessage}
-        </Text>
-      </View>
-      );
-    }
-
-    // Loading State
-    if (!this.state.messages.length) {
-      return (
-        <ActivityIndicatorIOS
-          animating={true}
-          style={[styles.centering, styles.loading]}
-          size="large"
-        />
-      );
-    }
+    // // Loading State
+    // if (!this.state.messages.length) {
+    //   return (
+    //     <ActivityIndicatorIOS
+    //       animating={true}
+    //       style={[styles.centering, styles.loading]}
+    //       size="large"
+    //     />
+    //   );
+    // }
 
     // Success State
     return (
-      <View>
+      <View style={styles.appContainer}>
+        <LocationTextInput/>
         <ListView
           initialListSize={10}
           pageSize={4}
@@ -103,6 +95,9 @@ export class App extends React.Component {
 }
 
 var styles = StyleSheet.create({
+  appContainer: {
+    backgroundColor: 'white'
+  },
   inputContainer: {
     flex: 1,
     alignItems: 'center',

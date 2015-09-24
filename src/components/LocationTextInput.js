@@ -30,18 +30,16 @@ export class LocationTextInput extends React.Component {
     let location = this.state.input;
     MessageActions.fetchMessages(location);
     this.setState({input: ''});
-    this.props.toggle();
   }
 }
 
 let styles = StyleSheet.create({
   locationInput: {
-    textAlign: 'center',
-    height: 50,
-    margin: 30,
-    marginTop: 60,
+    height: 40,
+    margin: 10,
+    marginBottom: 0,
     padding: 10,
-    backgroundColor: 'white',
+    backgroundColor: '#F8F8F8',
     fontFamily: 'Avenir',
     fontSize: 20,
     borderRadius: 10

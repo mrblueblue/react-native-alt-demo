@@ -70,7 +70,7 @@ export class App extends React.Component {
 
     // Success State
     return (
-      <View style={styles.appContainer}>
+      <View>
         <LocationTextInput/>
         <ListView
           initialListSize={10}

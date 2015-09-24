@@ -3,7 +3,6 @@
 import React from 'react-native';
 import { App } from './app';
 import NavigationBar from 'react-native-navbar';
-import { SearchButton } from './components/SearchButton';
 
 let { Navigator, View, StyleSheet } = React;
 
@@ -16,7 +15,7 @@ export class Navigation extends React.Component {
         renderScene={this.renderScene.bind(this)}
         initialRoute={{
           component: App,
-          navigationBar: <NavigationBar title='React-Native-Alt-Demo'/>
+          navigationBar: <NavigationBar title='React Native Alt Demo'/>
         }}
       />
     );
@@ -52,11 +51,11 @@ let styles = StyleSheet.create({
     flex: 1
   },
   navColor: {
-    'backgroundColor': '#00bcd4'
+    'backgroundColor': '#3B5998'
   },
   appContainer: {
     flex: 1,
-    backgroundColor: '#f9f9f9'
+    backgroundColor: 'white'
   }
 });
 

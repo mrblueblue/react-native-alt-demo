@@ -1,9 +1,9 @@
 'use strict';
 
 import React from 'react-native';
-import { Navigation } from './nav';
+import { Navigation } from './src/nav';
 
-let { AppRegistry, StatusBarIOS } = React;
+const { AppRegistry, StatusBarIOS } = React;
 
 class RNAltDemo extends React.Component {
 

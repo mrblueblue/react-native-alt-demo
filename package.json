@@ -1,47 +1,13 @@
 {
-  "name": "RNAltExample",
-  "version": "0.0.1",
+  "name": "RNAltDemo",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "./node_modules/.bin/react-native-webpack-server start",
-    "test": "jest --verbose",
-    "webpack": "webpack --config webpack.config.js --colors --progress"
-  },
-  "jest": {
-    "scriptPreprocessor": "<rootDir>/node_modules/react-native/jestSupport/scriptPreprocess.js",
-    "setupEnvScriptFile": "<rootDir>/node_modules/react-native/jestSupport/env.js",
-    "testFileExtensions": [
-      "js"
-    ],
-    "unmockedModulePathPatterns": [
-      "source-map",
-      "node_modules",
-      "react",
-      "alt",
-      "stores",
-      "actions",
-      "utils"
-    ]
+    "start": "node_modules/react-native/packager/packager.sh"
   },
   "dependencies": {
-    "alt": "^0.17.3",
-    "react-native": "0.11.0",
-    "react-native-navbar": "^0.8.2"
-  },
-  "devDependencies": {
-    "anybar-webpack": "^1.0.7",
-    "babel": "^5.6.4",
-    "babel-core": "^5.1.8",
-    "babel-loader": "^5.0.0",
-    "babel-runtime": "^5.1.8",
-    "eslint": "^1.5.0",
-    "eslint-plugin-babel": "^2.1.1",
-    "eslint-plugin-react": "^3.4.2",
-    "gulp": "^3.9.0",
-    "gulp-eslint": "^1.0.0",
-    "gulp-watch": "^4.2.4",
-    "react-hot-loader": "^1.3.0",
-    "react-native-webpack-server": "^0.5.1",
-    "webpack": "^1.8.4"
+    "alt": "^0.17.9",
+    "react-native": "^0.14.2",
+    "react-native-navbar": "^1.0.5"
   }
 }

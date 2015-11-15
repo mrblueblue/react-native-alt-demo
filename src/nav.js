@@ -4,7 +4,7 @@ import React from 'react-native';
 import { App } from './app';
 import NavigationBar from 'react-native-navbar';
 
-let { Navigator, View, StyleSheet } = React;
+const { Navigator, View, StyleSheet } = React;
 
 export class Navigation extends React.Component {
 

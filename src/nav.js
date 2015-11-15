@@ -8,22 +8,33 @@ const { Navigator, View, StyleSheet } = React;
 
 export class Navigation extends React.Component {
 
+  constructor(){
+    super()
+    this.renderScene = this.renderScene.bind(this)
+  }
+
   render() {
+
+    const titleConfig = {
+      title: 'React Native Alt Demo',
+      tintColor: 'white'
+    }
+
     return (
       <Navigator
         style={styles.navigator}
-        renderScene={this.renderScene.bind(this)}
+        renderScene={this.renderScene}
         initialRoute={{
           component: App,
-          navigationBar: <NavigationBar title='React Native Alt Demo'/>
+          navigationBar: <NavigationBar title={titleConfig} />
         }}
       />
     );
   }
 
   renderScene(route, navigator) {
-    let Component = route.component;
-    let navBar = route.navigationBar;
+    const Component = route.component;
+    const navBar = route.navigationBar;
 
     if (navBar) {
       navBar = React.addons.cloneWithProps(navBar, {
@@ -46,7 +57,7 @@ export class Navigation extends React.Component {
   }
 }
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   navigator: {
     flex: 1
   },

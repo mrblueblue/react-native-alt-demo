@@ -1,10 +1,27 @@
 {
-  "name": "RNAltDemo",
+  "name": "react-native-alt-demo",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "node_modules/react-native/packager/packager.sh"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrblueblue/react-native-alt-demo.git"
+  },
+  "keywords": [
+    "react-native",
+    "react",
+    "flux",
+    "alt",
+    "demo"
+  ],
+  "author": "Jonathan Huang <jon@levity.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrblueblue/react-native-alt-demo/issues"
+  },
+  "homepage": "https://github.com/mrblueblue/react-native-alt-demo",
   "dependencies": {
     "alt": "^0.17.9",
     "react-native": "^0.14.2",

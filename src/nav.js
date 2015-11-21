@@ -33,8 +33,8 @@ export class Navigation extends React.Component {
   }
 
   renderScene(route, navigator) {
-    const Component = route.component;
-    const navBar = route.navigationBar;
+    let Component = route.component;
+    let navBar = route.navigationBar;
 
     if (navBar) {
       navBar = React.addons.cloneWithProps(navBar, {
